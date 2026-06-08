@@ -21,6 +21,7 @@ A simple Python command-line tool to generate axisymmetric body profiles using t
 ## Requirements
 
 * Python 3.7+
+* Astral's `uv`
 * Dependencies: `numpy`, `scipy`, `matplotlib`, `openpyxl`
 
 The script will attempt to install any missing package automatically via `pip`.
@@ -33,12 +34,10 @@ The script will attempt to install any missing package automatically via `pip`.
    git clone https://github.com/mithunkrish-05/Haack-Series-Nosecone-CAD-Points.git
    cd Haack-Series-Nosecone-CAD-Points
    ```
-2. (Optional) Create a virtual environment:
+2. Create a virtual environment (you may need to [install uv](https://docs.astral.sh/uv/#installation):
 
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate      # macOS/Linux
-   .\.venv\Scripts\activate    # Windows
+   uv init
    ```
 
 ## Usage
@@ -46,7 +45,7 @@ The script will attempt to install any missing package automatically via `pip`.
 Run the script:
 
 ```bash
-python Nosecone_CAD_points.py
+uv run python Nosecone_CAD_points.py
 ```
 
 You will be prompted for:
@@ -75,7 +74,7 @@ After answering, the script will:
 ## Example
 
 ```text
-$ python generate_body.py
+$ uv run python generate_body.py
 Please enter the Length of the body [0.28]: 0.5
 Please enter the Maximum Radius of the body [0.01]: 0.02
 Body Type: Simple Sears-Haack [S] or Advanced Haack Series [A]? s
