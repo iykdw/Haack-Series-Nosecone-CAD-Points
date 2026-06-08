@@ -1,20 +1,21 @@
 #Downloading and Importing libraries
-import sys, subprocess
+import sys
+import subprocess
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import openpyxl
+
 
 def ensure(pkg):
     try:
         __import__(pkg)
     except ImportError:
         print(f"Installing missing package: {pkg}…")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", pkg])
+        subprocess.check_call(["uv", "pip", "install", pkg])
 
 for pkg in ("numpy","scipy","matplotlib","openpyxl","os"):
     ensure(pkg)
-import os
-import numpy as np
-import scipy
-import matplotlib.pyplot as plt
-import openpyxl
 
 #Sears Series
 def sears_haack(x, L, R):
